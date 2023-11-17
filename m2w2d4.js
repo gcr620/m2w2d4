@@ -16,52 +16,37 @@ ES. L'utente Marco Rossi e' un ambassador, quindi la frase dovrebbe essere "Marc
 Infine, crea un SECONDO array in cui inserirai SOLO gli ambassador.
 */
 
-// const marco = {
-//   name: "Marco",
-//   lastName: "Rossi",
-//   isAmbassador: true,
-// }
+const marco = {
+  name: "Marco",
+  lastName: "Rossi",
+  isAmbassador: true,
+}
 
-// const paul = {
-//   name: "Paul",
-//   lastName: "Flynn",
-//   isAmbassador: false,
-// }
+const paul = {
+  name: "Paul",
+  lastName: "Flynn",
+  isAmbassador: false,
+}
 
-// const amy = {
-//   name: "Amy",
-//   lastName: "Reed",
-//   isAmbassador: false,
-// }
+const amy = {
+  name: "Amy",
+  lastName: "Reed",
+  isAmbassador: false,
+}
 // marco 0 - Paul 1 - Amy 2
-let users =[
-  marco = {
-    name: "Marco",
-    lastName: "Rossi",
-    isAmbassador: true,
-  },
-  paul = {
-    name: "Paul",
-    lastName: "Flynn",
-    isAmbassador: false,
-  },
-  amy = {
-    name: "Amy",
-    lastName: "Reed",
-    isAmbassador: false,
-  }
-];
-let ambassador = [
-  
-]
+let users =[];
+let ambassador = []
 const prices = [35, 5, 2, 50 , 30]
 const shippingCost = 50
 let utenteCheEffettuaLAcquisto = amy ;
 //cambia il valore qui per provare se il tuo algoritmo funziona!
 let cart = 100 ;
 let sale = ((cart * 30) / 100);
-// let sale = perc.toFixed(1);
 
+// push per inserire gli utenti nell'array
+users.push(marco, paul, amy)
+
+// for per elencare gli utenti e se sono o meno ambassador
 for (let index = 0; index < users.length; index++) {
   if (users[index].isAmbassador == true) {
     console.log(users[index].name + " " + users[index].lastName + " è un ambassador");
@@ -70,10 +55,14 @@ for (let index = 0; index < users.length; index++) {
     console.log(users[index].name + " " + users[index].lastName + " non è un ambassador");
   } 
 }
+// per far capire meglio chi sta facendo l'aquisto dei 3
 console.log(utenteCheEffettuaLAcquisto.name + " " + utenteCheEffettuaLAcquisto.lastName + " ecco il tuo riepilogo:");
-if (users.includes(utenteCheEffettuaLAcquisto == false)) {
+// teoricamente si dovrebbe controllare se esiete questo utente quindi ho messo questa parte
+if (!users.includes(utenteCheEffettuaLAcquisto)) {
   console.log("Utente non trovato");
-} else {
+} 
+// qui verifica il tip di calcolo da fare in tutte le possibili varianti 
+else {
   if (ambassador.includes(utenteCheEffettuaLAcquisto)) {
     if (cart > 100) {
       console.log("Totale spesa: ");
